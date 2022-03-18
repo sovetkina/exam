@@ -1,14 +1,3 @@
-<?php 
-	include 'libs/db.php';
-
-	if (isset($_POST['reg'])) {
-		$user = R::dispense('users');
-		$user->name = $_POST['name'];
-		$user->login = $_POST['login'];
-		$user->password = $_POST['password'];
-		R::store($user);
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
