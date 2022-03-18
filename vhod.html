@@ -1,20 +1,3 @@
-<?php 
-	require 'libs/db.php';
-	session_start();
-	if(isset($_POST['vhod'])) {
-		$login = R::findOne('users', 'login = ?', [$_POST['login']]);
-		if($login) {
-			if($login->login == 'admin' && $login->password == 1){
-				$_SESSION['admin'] = true;
-				header('Location: admin.php');
-			}
-				elseif($login->password == $_POST['password']){
-				$_SESSION['user'] = $login;
-				header('Location: index.php');
-			}
-		}
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
